@@ -21,7 +21,8 @@ vrrp_instance <%= instance["name"] %> {
     state <%= (instance["backup_nodes"].include? node.name) ? "BACKUP" : "MASTER" %>
     virtual_router_id <%= instance["virtual_router_id"] %>
     multicast_src_ip <%= node["network"]["private_ip"] %>
-    <% if instance["nopreempt"] %>nopreempt<% end %>
+    <% if instance["nopreempt"] %>nopreempt<% end -%>
+    preempt_delay <%= instance["preempt_delay"] %> 
     <% if instance["authentication"] -%>
     authentication {
       auth_type PASS

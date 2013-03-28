@@ -18,6 +18,7 @@ default[:keepalived][:vrrp_instances] = [
     :name               => "VI_1",
     :interface          => "eth0",
     :nopreempt          => false,     # omitted if false, included if true
+    :preempt_delay	=> 0,
     :authentication     => {
       :auth_pass => "1234"
     },
