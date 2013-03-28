@@ -10,6 +10,7 @@ default[:keepalived][:notification_emails] = []
 default[:keepalived][:notification_email_from] = "root@localhost"
 default[:keepalived][:smtp_server] = nil
 default[:keepalived][:smtp_connect_timeout] = nil
+default[:keepalived][:router_id] = "LVS_DEVEL"
 
 default[:keepalived][:vrrp_instances] = [
   # define a hash for each vrrp_instance:
