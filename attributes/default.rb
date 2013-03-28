@@ -18,6 +18,9 @@ default[:keepalived][:vrrp_instances] = [
     :name               => "VI_1",
     :interface          => "eth0",
     :nopreempt          => false,     # omitted if false, included if true
+    :authentication     => {
+      :auth_pass => "1234"
+    },
     :advert_int         => nil, # Advertisement Interval (in seconds)
     :virtual_router_id  => 51,
     :master_priority    => 101,     # Priority to use on the Master
